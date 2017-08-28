@@ -29,5 +29,4 @@ echo -n "<prtg>
         <channel>Expired</channel>
         <value>$(grep "status=expired" $tmp_file | wc -l)</value>
     </result>
-
 </prtg>"
