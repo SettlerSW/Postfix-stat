@@ -12,6 +12,7 @@ You can display with "echo" (commented) or XML for PRTG.
 # Output
 ## XML (PRTG)
 
+```
 <prtg>
     <result>
         <channel>Sent</channel>
@@ -29,10 +30,13 @@ You can display with "echo" (commented) or XML for PRTG.
         <channel>Expired</channel>
         <value>0</value>
     </result>
+```
 
 ## ECHO
 
+```
 108 mail sent
 4 mail deferred
 0 mail bounced
 0 mail expired
+```
