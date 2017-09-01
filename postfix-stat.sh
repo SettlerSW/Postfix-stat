@@ -1,11 +1,12 @@
 #!/bin/bash
 
-date_debut=$( date -d "-$1 minutes" +"%b %d %H:%M:%S" )
-date_fin=$( date +"%b %d %H:%M:%S" )
+date_debut=$( date -d "-$1 minutes" +"%b %_d %H:%M:%S" )
+date_fin=$( date +"%b %_d %H:%M:%S" )
 log_path="/var/log/mail.log"
 tmp_file="/tmp/tmpmail.log"
 
-awk '$0>=from&&$0<=to' from="$date_debut" to="$date_fin" $log_path > $tmp_file
+
+awk '$0>=from&&$0<=to' from="$date_debut" to="$date_fin" $log_path | grep "status=" > $tmp_file
 
 #echo $(grep "status=sent" $tmp_file | wc -l) mail sent
 #echo $(grep "status=deferred" $tmp_file | wc -l) mail deferred
